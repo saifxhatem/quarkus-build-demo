@@ -1,0 +1,18 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-f",
+        "src/main/docker/Dockerfile.jvm",
+        "-t",
+        "eu.gcr.io/$PROJECT_ID/whatsapp-api",
+        "-t",
+        "eu.gcr.io/$PROJECT_ID/whatsapp-api:$TAG_NAME",
+        "--cache-from",
+        "eu.gcr.io/$PROJECT_ID/whatsapp-api:latest",
+        ".",
+      ]
+images:
+  - "eu.gcr.io/$PROJECT_ID/whatsapp-api"
+

@@ -7,8 +7,6 @@ steps:
         "src/main/docker/Dockerfile.jvm",
         "-t",
         "gcr.io/$PROJECT_ID/quarkus-demo",
-        "-t",
-        "gcr.io/$PROJECT_ID/quarkus-demo:$TAG_NAME",
         "--cache-from",
         "gcr.io/$PROJECT_ID/quarkus-demo:latest",
         ".",
